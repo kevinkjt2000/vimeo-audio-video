@@ -86,11 +86,7 @@ for line in open(args.url_list):
 
     # Combine audio and video here
     print("Combining video and audio...")
-    cmd = "ffmpeg -y -i "
-    cmd += filenameAudio
-    cmd += " -i "
-    cmd += filenameVideo
-    cmd += " " + output_file
+    cmd = f'ffmpeg -y -i "{filenameAudio}" -i "{filenameVideo}" "{output_file}"'
     subprocess.call(cmd, shell=True)
     print("Mixing Done!")
 
